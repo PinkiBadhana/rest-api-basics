@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details of post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Here is the details of your post</h1>
+    <div class="post" name="post">
+        <h3>id : <%= post.id %></h3>
+        <h4>Username : @<%= post.username %></h4>
+        <img src="/<%= post.img %>" alt="some img">
+        <p> <%= post.content %> </p>
+        <h4>Likes : <%= post.likes %> &nbsp;&nbsp; Comments : <%= post.comments %></h4>
+    </div>
+</body>
+</html>

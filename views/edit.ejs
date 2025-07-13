@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <style>
+        div {
+            background-color: rgb(230, 182, 93);
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit your post</h1>
+    <div class="post" name="post">
+        <h4>Username : @<%= post.username %></h4>
+        <img src="/<%= post.img %>" alt="some img">
+        <h4>Likes : <%= post.likes %> &nbsp;&nbsp; Comments : <%= post.comments %></h4>
+        <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
+            <textarea rows="5" cols="30" name="content"> <%= post.content %> </textarea>
+            <br>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>

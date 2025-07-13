@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Instagram</h1>
+    <h3>Posts</h3>
+    <% for(let post of posts) { %>
+        <div class="post" name="post">
+            <h4>Username : @<%= post.username %></h4>
+            <img src="/<%= post.img %>" alt="some img">
+            <p> <%= post.content %> </p>
+            <h4>Likes : <%= post.likes %> &nbsp;&nbsp; Comments : <%= post.comments %></h4>
+            <form method="get" action="/posts/<%= post.id %>">
+                <button>See in Detail</button>
+            </form>
+            <br>
+            <a href="/posts/<%= post.id %>/edit">Edit</a>
+            <br>
+            <br>
+            <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+                <button>Delete Post</button>
+            </form>
+            <br>
+        </div>
+    <% } %>
+    <br>
+    <br>
+    <a href="http://localhost:8080/posts/new">Create new post</a>
+</body>
+</html>
